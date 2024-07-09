@@ -1,0 +1,199 @@
+@import url('https://fonts.googleapis.com/css2?family=Mochiy+Pop+One&family=Shippori+Antique+B1&display=swap');
+
+body {
+    font-family: "Shippori Antique B1", "Mochiy Pop One", sans-serif;
+    font-weight: 100;
+    font-style: normal;
+}
+
+footer {
+    position: absolute;
+    margin: 0;
+    right: 0;
+    left: 0;
+    height: 100px;
+    background-color: lightgrey;
+}
+
+h1 {
+    margin-top: 100px;
+    font-family: "Mochiy Pop One", "Shippori Antique B1", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 3em;
+}
+
+.headerStyle {
+    /* display: inline-block; */
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    width: 100%;
+    height: 80px;
+    background-color: #feffff;
+    box-shadow: 0 3px 5px black;
+}
+
+.test2 {
+    display: flex;
+    height: 80px;
+    flex-direction: row-reverse;
+}
+
+.test2 > a {
+    margin: 0;
+    top: 0;
+    bottom: 0;
+    width: 120px;
+    text-align: center;
+    line-height: 80px;
+    color: #fff;
+    background-color: #6c7ee6;
+}
+
+.test2>a:hover {
+    background-color: #0d1857;
+}
+
+
+.calculator {
+    position: fixed;
+    margin: auto;
+    bottom: -60px;
+    left: 0;
+    right: 0;
+    width: 800px;
+    padding: 0px 20px 20px 15px;
+    background-color: #fff;
+    border: 1px solid rgb(151, 200, 255);
+    border-radius: 30px 30px 0 0;
+    box-shadow: 1px 3px 10px rgb(164, 192, 224);
+    overflow-y: hidden;
+    max-height: 100px;
+    transition: max-height  0.3s linear, bottom 0.3s linear;
+}
+
+.calculator:hover {
+    position: fixed;
+    margin: auto;
+    bottom: -5px;
+    left: 0;
+    right: 0;
+    width: 800px;
+    padding: 0px 20px 20px 15px;
+    border: 1px solid rgb(151, 200, 255);
+    box-shadow: 1px 3px 10px rgb(164, 192, 224);
+
+    max-height: 380px;
+    transition: max-height  0.3s linear, bottom 0.3s linear;
+}
+
+.calculator_col1 {
+    text-align: center;
+    font-size: large;
+}
+
+.calculator_col1>.cal_padding {
+    padding: 15px;
+}
+
+.calculator_col2 {
+    padding-left: 40px;
+}
+
+.calculator_col2>.cal_padding {
+    padding: 5px;
+}
+
+#i_Weight,
+.i_PV {
+    outline: none;
+    width: 40px;
+    border: 0px;
+    border-bottom: 1px solid black;
+    text-align: center;
+    font-size: 20px;
+}
+
+#i_Weight:hover,
+.i_PV:hover {
+    border-bottom: 1px solid blue;
+    border-radius: 10px 10px 0px 0px;
+    background-color: rgb(226, 248, 255);
+}
+
+#i_Weight:focus, .i_PV:focus {
+    border-radius: 10px 10px 0px 0px;
+    background-color: rgb(244, 253, 255);
+    box-shadow: 1px 3px 5px rgb(164, 197, 224);
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+#w_Sort {
+    padding: 3px;
+    border-radius: 10px;
+    font-size: 1rem;
+    text-align: center;
+}
+
+#btn_wFilterSort {
+    margin: 0px 0px 0px 20px;
+    padding: 1px 15px 3px;
+    color: #F5F5F5;
+    background-color: rgb(72, 116, 182);
+    border: 0px dashed blue;
+    border-radius: 20px;
+    box-shadow: 2px 2px 3px rgb(130, 154, 173);
+    font-size: 20px;
+    font-family: "Shippori Antique B1", "Mochiy Pop One", sans-serif;
+}
+
+#btn_wFilterSort:hover {
+    background-color: rgb(39, 118, 187);
+    border: 0px solid blue;
+    box-shadow: 1px 1px 2px rgb(48, 68, 85);
+}
+
+#btn_wFilterSort:active {
+    background-color: rgb(30, 93, 148);
+    border: 0px solid blue;
+    box-shadow: 2px 2px 3px rgb(21, 42, 61) inset;
+}
+
+.FSreturn {
+    margin: 25px 0 0 0;
+    max-height: 200px;
+    overflow-y: scroll;
+    transition: max-height 0.2s ease;
+}
+
+.FSreturn::-webkit-scrollbar {
+    width: 10px;
+    background-color: #F5F5F5;
+}
+
+.FSreturn::-webkit-scrollbar-track {
+    border-radius: 10px;
+    /* background: rgba(0,0,0,0.1); */
+    /* border: 1px solid #ccc; */
+}
+
+.FSreturn::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background: rgb(187, 214, 255);
+    /* border: 1px solid #aaaaaa; */
+}
+
+.FSreturn::-webkit-scrollbar-thumb:hover {
+    background: #6c7ee6;
+}
+
+.FSreturn::-webkit-scrollbar-thumb:active {
+    background: linear-gradient(left, #22ADD4, #1E98BA);
+}
