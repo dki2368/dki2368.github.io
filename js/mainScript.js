@@ -283,5 +283,5 @@ function w_FS() {
         }
         FS_text += `</ul></div>`;
     }
-    document.getElementById("test").innerHTML = FS_text;
+    document.getElementById("searchFS").innerHTML = FS_text;
 }
