@@ -24,3 +24,22 @@
 //       }, delay);
 //     };
 //   }
+
+// 變更header樣式
+
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+    if (document.body.scrollTop > 80 || document.documentElement.scrollTop > 80) {
+      document.getElementById("headerStyle").style.height = "60px";
+      document.getElementById("headerStyle").style.boxShadow = "0 3px 5px rgb(189, 189, 189";
+      document.getElementById("navLinkes").style.lineHeight = "60px";
+      document.getElementById("navLogin").style.margin = "8px 20px 0 auto";
+      
+    } else {
+        document.getElementById("headerStyle").style.height = "80px";
+        document.getElementById("headerStyle").style.boxShadow = "0 0px 0px rgb(189, 189, 189";
+        document.getElementById("navLinkes").style.lineHeight = "80px";
+        document.getElementById("navLogin").style.margin = "18px 20px 0 auto";
+    }
+  }

@@ -9,13 +9,21 @@
 </head>
 
 <body>
-    <header class="headerStyle">
-        <nav class="navLinkes">
+    <header id="headerStyle">
+        <nav id="navLinkes">
             <a href="#" class="navInfo">Home</a>
             <a href="./about.html" class="navInfo">About</a>
-            <a href="" class="navInfo">bbb</a>
+            <a href="" class="navInfo">Consolidator
+                <ul>
+                    <li class="navMore">aaa</li>
+                    <li class="navMore">aaa</li>
+                    <li class="navMore">aaa</li>
+                    <li class="navMore">aaa</li>
+                </ul>
+            </a>
             <a href="./QA.html" class="navInfo">Q<small>&</small>A</a>
-            <a href="" class="navLogin">登入</a>
+            <a href="./tool.html" class="navInfo">Tool</a>
+            <a href="./login.html" id="navLogin">Sign in</a>
         </nav>
     </header>
     <main>
@@ -23,44 +31,62 @@
             <h1> 中文測試 </h1>
         </div>
         <div class="info">
-            <a href=""><h2>什麼是集運</h2></a>
+            <a href="">
+                <h2>什麼是集運</h2>
+            </a>
         </div>
         <div class="CardSlider">
-            Slider
+            <article class="cards">
+                <a href="" class="cardLink">
+                    <div class="imgBorder">
+                        <img src="./img/newatever-logo.jpg" alt="newatever-logo">
+                    </div>
+                    <p>
+                        <h2>Newatever</h2>
+                        <h3>起重：1000日圓/1kg </h3>
+                        <ul class="cardList">
+                            <li>可包稅</li>
+                            <li>可免費合箱</li>
+                            <li>可收平信</li>
+                            <li>可收貨到付款包裹</li>
+                            <li>倉儲時間：21天</li>
+                        </ul>
+                    </p>
+                </a>
+            </article>
 
         </div>
-        <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-        <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-        <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-        <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-    </main>
-    <div class="calculator">
-        <p class="calculator_col1">重量：<input type="number" id="i_Weight" required> kg
-            <span class="cal_padding"></span>
-            包裹大小：
-            <input type="number" id="i_PL" class="i_PV"> x
-            <input type="number" id="i_PW" class="i_PV"> x
-            <input type="number" id="i_PH" class="i_PV"> cm
-            <span class="cal_padding"></span>
-            <span style="padding: 0 5px 0 0;">照</span>
-            <select id="w_Sort">
-                <option value="1" selected>價格低到高</option>
-                <option value="2">免費倉儲天數多到少</option>
-                <option value="3">運輸天數短到長</option>
-            </select>
-            <span style="padding: 0 0 0 5px;">排序</span>
-        </p>
-        <div class="calculator_col2">
-            <input type="checkbox" name="w_Filter"> 包稅<span class="cal_padding"></span>
-            <input type="checkbox" name="w_Filter"> 免費合箱<span class="cal_padding"></span>
-            <input type="checkbox" name="w_Filter"> 加強包裝<span class="cal_padding"></span>
-            <input type="checkbox" name="w_Filter"> 不計材積<span class="cal_padding"></span>
-            <input type="checkbox" name="w_Filter"> 可收平信<span class="cal_padding"></span>
-            <input type="checkbox" name="w_Filter"> 日本當地貨到付款<span class="cal_padding"></span>
-            <button id="btn_wFilterSort">送 出</button>
+        <div>
+            <div class="calculator hideTool">
+                <H2>試試小工具</H2>
+                <p class="calculator_col1">重量：<input type="number" id="i_Weight" required> kg
+                    <span class="cal_padding"></span>
+                    包裹大小：
+                    <input type="number" id="i_PL" class="i_PV"> x
+                    <input type="number" id="i_PW" class="i_PV"> x
+                    <input type="number" id="i_PH" class="i_PV"> cm
+                    <span class="cal_padding"></span>
+                    <span style="padding: 0 5px 0 0;">照</span>
+                    <select id="w_Sort">
+                        <option value="1" selected>價格低到高</option>
+                        <option value="2">免費倉儲天數多到少</option>
+                        <option value="3">運輸天數短到長</option>
+                    </select>
+                    <span style="padding: 0 0 0 5px;">排序</span>
+                </p>
+                <div class="calculator_col2">
+                    <input type="checkbox" name="w_Filter"> 包稅<span class="cal_padding"></span>
+                    <input type="checkbox" name="w_Filter"> 免費合箱<span class="cal_padding"></span>
+                    <input type="checkbox" name="w_Filter"> 加強包裝<span class="cal_padding"></span>
+                    <input type="checkbox" name="w_Filter"> 不計材積<span class="cal_padding"></span>
+                    <input type="checkbox" name="w_Filter"> 可收平信<span class="cal_padding"></span>
+                    <input type="checkbox" name="w_Filter"> 日本當地貨到付款<span class="cal_padding"></span>
+                    <button id="btn_wFilterSort">送 出</button>
+                </div>
+                <div id="searchFS"></div>
+            </div>
         </div>
-        <div id="searchFS"></div>
-    </div>
+    </main>
 
     <footer>
         <p>footer</p>

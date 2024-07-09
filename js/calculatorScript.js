@@ -10,7 +10,7 @@ var SPfee; // 加強包裝後費用
 const air_freight = [
     {
         w_NO: 1,
-        w_Name: "Newatever",
+        w_Name: "Newatever 基本方案",
         volume: true,
         volumetric_weight: VW(),
         shipping_fee: function SF() {
@@ -35,7 +35,7 @@ const air_freight = [
         free_consolidation: true,
         free_storage: 21,
         demurrage: 150,
-        transit_time: 5,
+        transit_time: 4,
         days: "約4~6天",
         COD: true,
         tax_free: true,
@@ -146,26 +146,25 @@ const air_freight = [
         free_consolidation: false,
         free_storage: 21,
         demurrage: 150,
-        transit_time: 5,
+        transit_time: 4,
         days: "約4~6天",
         COD: true,
         tax_free: true,
         ordinary_mail: true
     },
     {
-        w_NO: 5,
-        w_Name: "Newatever 免打包出貨",
+        w_NO: 6,
+        w_Name: "奶油貓 基本方案",
         volume: true,
         volumetric_weight: VW(),
         shipping_fee: function SF() {
             tempP_V = VW();
             WorV();
-            Pshipping_fee = 800 * WorV_2();
-            if (chargeable_weight < 10) Pshipping_fee += 300;
-            Pshipping_fee = Math.floor(Pshipping_fee * 0.2197) + 1;
+            Pshipping_fee = 230 * WorV_2();
+            if (chargeable_weight < 6) Pshipping_fee += 80;
             return Pshipping_fee;
         },
-        shipping_rate: "運費說明5",
+        shipping_rate: "運費說明6",
         strength_packaging: false,
         SP_fee: "",
         SP_rate: "",
@@ -217,7 +216,8 @@ function WorV_2() { // 每0.5kg計價
 let btn_wFS = document.getElementById("btn_wFilterSort");
 btn_wFS.addEventListener("click", w_FS, false);
 
-//按按鈕後執行函式
+
+// 按按鈕後執行計算機函式
 function w_FS() {
     // 取得預估重量&包裹長寬高
     package_weight = document.getElementById("i_Weight").value;
@@ -246,42 +246,68 @@ function w_FS() {
     // 排序
     var getSvalue = document.getElementById("w_Sort").value;
 
-    if (getSvalue == 1) { //價格低到高
-        var S_end = F_end.sort(function (a, b) {
-            return a.shipping_fee() - b.shipping_fee();
-        })
-    } else if (getSvalue == 2) { // 免費倉儲天數多到少
-        var S_end = F_end.sort(function (a, b) {
+    var S_end = F_end.sort(function (a, b) { //價格低到高
+        return a.shipping_fee() - b.shipping_fee();
+    })
+
+    if (getSvalue == 2 || getSvalue == 5) { // 免費倉儲天數多到少
+        S_end = S_end.sort(function (a, b) {
             return b["free_storage"] - a["free_storage"];
         })
-    } else { // 運輸天數短到長
-        var S_end = F_end.sort(function (a, b) {
+    } else if (getSvalue == 3 || getSvalue == 6) { // 運輸天數短到長
+        S_end = S_end.sort(function (a, b) {
             return a["transit_time"] - b["transit_time"];
         })
     }
 
     // 印出
-    var FS_text = `<div class="FSreturn"><p>符合條件的集運：</p>`;
+    if (getSvalue <= 3) {
+        // 印出最符合條件的
+        var FS_text = `<div class="FSreturn"><p>推薦使用：</p>`;
 
-    if (F_end.length == 0) {
-        FS_text += "<p>沒有符合的集運</p>";
-    } else {
-        FS_text += "<ul>";
-        for (var i = 0; i < S_end.length; i++) {
-            FS_text +=
-                `<li>
-            集運： ${S_end[i]["w_Name"]} <br>
+        if (F_end.length == 0) {
+            FS_text += "<p>沒有符合的集運</p>";
+        } else {
+            FS_text += `<ul>
+            <li>
+            集運： ${S_end[0]["w_Name"]} <br>
             <ul>
-                <li>費用： 約 ${S_end[i].shipping_fee()} 元 <br> ${S_end[i]["shipping_rate"]}</li>`;
+                <li>費用： 約 ${S_end[0].shipping_fee()} 元 <br> ${S_end[0]["shipping_rate"]}</li>`;
             if (getFbox[2].checked) {
-                FS_text += `<li>加強包裝後費用： 約 ${S_end[i].SP_fee()} 元 <br> ${S_end[i]["SP_rate"]}</li>`;
+                FS_text += `<li>加強包裝後費用： 約 ${S_end[0].SP_fee()} 元 <br> ${S_end[0]["SP_rate"]}</li>`;
             }
             FS_text +=
-                `<li>免費倉儲天數： ${S_end[i]["free_storage"]}</li>
-                <li>申請打包後配達天數： ${S_end[i]["days"]}</li>
+                `<li>免費倉儲天數： ${S_end[0]["free_storage"]}</li>
+                <li>申請打包後配達天數： ${S_end[0]["days"]}</li>
             </ul> </li> <br>`
         }
         FS_text += `</ul></div>`;
+        document.getElementById("searchFS").innerHTML = FS_text;
+
+    } else {
+        // 印出所有符合條件的
+        var FS_text = `<div class="FSreturn FSscroll"><p>符合條件的集運：</p>`;
+
+        if (F_end.length == 0) {
+            FS_text += "<p>沒有符合的集運</p>";
+        } else {
+            FS_text += "<ul>";
+            for (var i = 0; i < S_end.length; i++) {
+                FS_text +=
+                    `<li>
+                集運： ${S_end[i]["w_Name"]} <br>
+                <ul>
+                <li>費用： 約 ${S_end[i].shipping_fee()} 元 <br> ${S_end[i]["shipping_rate"]}</li>`;
+                if (getFbox[2].checked) {
+                    FS_text += `<li>加強包裝後費用： 約 ${S_end[i].SP_fee()} 元 <br> ${S_end[i]["SP_rate"]}</li>`;
+                }
+                FS_text +=
+                    `<li>免費倉儲天數： ${S_end[i]["free_storage"]}</li>
+                <li>申請打包後配達天數： ${S_end[i]["days"]}</li>
+                </ul> </li> <br>`
+            }
+            FS_text += `</ul></div>`;
+        }
+        document.getElementById("searchFS").innerHTML = FS_text;
     }
-    document.getElementById("searchFS").innerHTML = FS_text;
 }

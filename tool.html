@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>搜尋工具</title>
+    <link rel="stylesheet" href="./css/mailStyle.css">
+</head>
+
+<body>
+    <header class="headerStyle">
+        <nav class="navLinkes">
+            <a href="./index.html" class="navInfo">Home</a>
+            <a href="./about.html" class="navInfo">About</a>
+            <a href="" class="navInfo">Consolidator</a>
+            <a href="./QA.html" class="navInfo">Q<small>&</small>A</a>
+            <a href="" class="navInfo  navNow">Tool</a>
+            <a href="./login.html" id="navLogin">Sign in</a>
+        </nav>
+    </header>
+    <main>
+        <div>
+            <br>
+        </div>
+        <div class="calculator">
+            <H2>試試小工具</H2>
+            <p class="calculator_col1">重量：<input type="number" id="i_Weight" required> kg
+                <span class="cal_padding"></span>
+                包裹大小：
+                <input type="number" id="i_PL" class="i_PV"> x
+                <input type="number" id="i_PW" class="i_PV"> x
+                <input type="number" id="i_PH" class="i_PV"> cm
+                <span class="cal_padding"></span>
+                <span style="padding: 0 5px 0 0;">照</span>
+                <select id="w_Sort">
+                    <option value="4" selected>價格低到高</option>
+                    <option value="5">免費倉儲天數多到少</option>
+                    <option value="6">運輸天數短到長</option>
+                </select>
+                <span style="padding: 0 0 0 5px;">排序</span>
+            </p>
+            <div class="calculator_col2">
+                <input type="checkbox" name="w_Filter"> 包稅<span class="cal_padding"></span>
+                <input type="checkbox" name="w_Filter"> 免費合箱<span class="cal_padding"></span>
+                <input type="checkbox" name="w_Filter"> 加強包裝<span class="cal_padding"></span>
+                <input type="checkbox" name="w_Filter"> 不計材積<span class="cal_padding"></span>
+                <input type="checkbox" name="w_Filter"> 可收平信<span class="cal_padding"></span>
+                <input type="checkbox" name="w_Filter"> 日本當地貨到付款<span class="cal_padding"></span>
+                <button id="btn_wFilterSort">送 出</button>
+            </div>
+            <div id="searchFS"></div>
+        </div>
+    </main>
+    <footer>
+        <p>footer</p>
+    </footer>
+
+    <script src="./js/mainScript.js"></script>
+    <script src="./js/calculatorScript.js"></script>
+</body>
+
+</html>
