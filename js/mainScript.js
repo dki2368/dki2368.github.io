@@ -3,16 +3,20 @@
 window.onscroll = function () { scrollFunction() };
 
 function scrollFunction() {
-  if (document.body.scrollTop > 80 || document.documentElement.scrollTop > 80) {
+  if (document.body.scrollTop > 650 || document.documentElement.scrollTop > 650) {
     document.getElementById("headerStyle").style.height = "60px";
-    document.getElementById("headerStyle").style.boxShadow = "0 3px 5px rgb(189, 189, 189";
+    document.getElementById("headerStyle").style.position = "fixed";
+    document.getElementById("headerStyle").style.boxShadow = "0 3px 5px rgba(107, 107, 107, 0.8)";
+    document.getElementById("headerStyle").style.backgroundColor = "#feffff";
     document.getElementById("navLinkes").style.lineHeight = "60px";
     document.getElementById("navLogin").style.margin = "8px 20px 0 auto";
     document.getElementById("openMenu").style.margin = "10px auto auto 85%";
 
   } else {
     document.getElementById("headerStyle").style.height = "80px";
+    document.getElementById("headerStyle").style.position = "absolute";
     document.getElementById("headerStyle").style.boxShadow = "0 0px 0px rgb(189, 189, 189";
+    document.getElementById("headerStyle").style.backgroundColor = "#C1E6EC";
     document.getElementById("navLinkes").style.lineHeight = "80px";
     document.getElementById("navLogin").style.margin = "18px 20px 0 auto";
     document.getElementById("openMenu").style.margin = "20px auto auto 85%";
