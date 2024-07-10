@@ -1,30 +1,3 @@
-// const headerCheck = document.querySelector(".headerStyle")
-// function headermove() {
-//   const moveToNextAt = (headerCheck.offsetTop) + (headerCheck.clientHeight / 2);
-//   if (window.scrollY > moveToNextAt) {
-//     if (headerCheck.classList.contains('headerSticky') == false) {
-//         headerCheck.classList.add('headerSticky');
-//     }
-//   } else {
-//     if (headerCheck.classList.contains('headerSticky') == true) {
-//         headerCheck.classList.remove('headerSticky');
-//     }
-//   }
-// }
-// window.addEventListener('scroll', debounce(headermove));
-
-
-// function debounce(fn, delay = 500) {
-//     let timer;
-  
-//     return (...args) => {
-//       clearTimeout(timer);
-//       timer = setTimeout(() => {
-//         fn(...args);
-//       }, delay);
-//     };
-//   }
-
 // 變更header樣式
 
 window.onscroll = function() {scrollFunction()};
@@ -43,3 +16,31 @@ function scrollFunction() {
         document.getElementById("navLogin").style.margin = "18px 20px 0 auto";
     }
   }
+
+
+// 卡片輪播
+let slideIndex = 1;
+showSlides(slideIndex);
+
+// Next/previous controls
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+// Thumbnail image controls
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  let i;
+  let slides = document.getElementsByClassName("cards");
+  let windowWidth = window.innerWidth;
+  console.group(windowWidth)
+  if (n > slides.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+  }
+  slides[slideIndex-1].style.display = "block";
+}
