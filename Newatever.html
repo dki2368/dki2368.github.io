@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>集運介紹：Newatever</title>
+    <title>日本集運推薦工具｜集運商詳細｜Newatever</title>
     <link rel="stylesheet" href="./css/mainStyle.css">
 </head>
 
@@ -12,71 +12,81 @@
     <header id="headerStyle">
         <nav id="navLinkes">
             <a href="./index.html" class="navInfo">Home</a>
-            <a href="./about.html" class="navInfo">About</a>
-            <a href="" class="navInfo navNow">Consolidator
-                <ul>
-                    <li class="navMore">aaa</li>
-                    <li class="navMore">aaa</li>
-                    <li class="navMore">aaa</li>
-                    <li class="navMore">aaa</li>
-                </ul>
-            </a>
-            <a href="./QA.html" class="navInfo">Q<small>&</small>A</a>
+            <a href="./about.html" class="navInfo navNow">About</a>
+            <!-- <a href="" class="navInfo">Consolidator</a> -->
+            <!-- <a href="./QA.html" class="navInfo">Q<small>&</small>A</a> -->
             <a href="./tool.html" class="navInfo">Tool</a>
-            <a href="./login.html" id="navLogin">Sign in</a>
         </nav>
         <span id="openMenu" onclick="openNav()"><img src="./img/icon/menu.svg" alt=""></span>
         <div id="myNav" class="overlay">
             <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
             <div class="overlay-content">
                 <a href="./index.html">Home</a>
-                <a href="./about.html">About</a>
-                <a href="">Consolidator</a>
-                <a href="./QA.html">Q<small>&</small>A</a>
+                <a href="">About</a>
+                <!-- <a href="">Consolidator</a> -->
+                <!-- <a href="./QA.html">Q<small>&</small>A</a> -->
                 <a href="./tool.html">Tool</a>
             </div>
         </div>
     </header>
-    <main>
+    <main class="Consolidator">
         <div class="pageTop">
-
-        </div>
-        <div class="ConsolidatorTop">
-            <div class="logoSpace">
-                <img src="./img/newatever-logo.jpg" alt="newatever-logo" class="logo">
+            <div class="TopBG">
+                <img class="topbgSun" src="./img/bg/sun_cloud_seagull.png">
+                <img class="topbgCloud2" src="./img/bg/cloud_s2.png">
+                <img class="topbgSeagull2" src="./img/bg/seagull_2.png">
             </div>
-            <h1>Newatever</h1>
+            <h1></h1>
         </div>
         <article class="pageArticle">
-            <div class="plan">
-                <p>Collapsible Set:</p>
-                <button class="collapsible">基本方案</button>
-                <div class="content">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
-                        labore
-                        et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi
-                        ut
-                        aliquip ex ea commodo consequat.</p>
+            <div class="ConsolidatorTop">
+                <div class="logoSpace">
+                    <img src="./img/newatever-logo.jpg" alt="newatever-logo" class="logo">
                 </div>
-                <p></p>
-                <button class="collapsible">免打包出貨</button>
-                <div class="content">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
-                        labore
-                        et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi
-                        ut
-                        aliquip ex ea commodo consequat.</p>
+                <h1>Newatever</h1>
+            </div>
+            <div class="plan">
+                <div class="price">
+                    <h1>運費公式</h1>
+                    <button class="collapsible">基本方案</button>
+                    <div class="content">
+                        <p>首重：1000日圓 / 1kg <br>
+                            6kg 以下：每 kg 運費 1000日圓 <br>
+                            6kg 起：每 0.5 kg 運費 425日圓 <br>
+                            <hr>
+                            材積公式：長 * 寬 * 高 / 6000
+                            <hr>
+                            合箱後每件未滿 10 kg 的包裹加收 300 日圓運費
+                        </p>
+                    </div>
+                    <button class="collapsible">免打包方案</button>
+                    <div class="content">
+                        <p>首重：800日圓 / 1kg <br>
+                            每 0.5 kg 運費 400日圓 <br>
+                            <hr>
+                            材積公式：長 * 寬 * 高 / 6000
+                            <hr>
+                            每件未滿 10 kg 的包裹加收 300 日圓運費
+                        </p>
+                    </div>
+                </div>
+                <div class="canDo">
+                    <ul class="canDoList">
+                        <li>可包稅</li>
+                        <li>可免費合箱</li>
+                        <li>可加價申請強化包裝</li>
+                        <li>可收平信</li>
+                        <li>可收貨到付款包裹</li>
+                        <li>倉儲時間：21天</li>
+                    </ul>
                 </div>
             </div>
-
         </article>
     </main>
     <footer>
-        <p>footer</p>
     </footer>
 
     <script src="./js/mainScript.js"></script>
-
 </body>
 
 </html>

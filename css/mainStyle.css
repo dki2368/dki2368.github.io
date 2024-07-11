@@ -29,6 +29,7 @@ a:hover,
 a:focus,
 a:active {
     color: #192f60;
+    text-decoration-line: none;
 }
 
 
@@ -46,6 +47,10 @@ main {
     padding-bottom: 5vh;
     width: 100vw;
     overflow-x: hidden;
+}
+
+.Consolidator{
+    background-color: #f3f3f3;
 }
 
 footer {
@@ -731,7 +736,7 @@ footer {
     justify-content: center;
 }
 
-.cards {
+.cards, .AboutCards {
     width: 80%;
     max-width: 1000px;
     height: 400px;
@@ -770,16 +775,16 @@ footer {
     }
 }
 
-.cards:hover {
+.cards:hover, .AboutCards:hover {
     box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
     transform: scale(1.05);
 }
 
-.cards>a {
+.cards>a:hover , .AboutcardLink:hover {
     text-decoration-line: none;
 }
 
-.imgBorder {
+.imgBorder, .AboutimgBorder {
     position: relative;
     width: 100%;
     height: 45%;
@@ -817,6 +822,23 @@ footer {
     margin: auto;
 }
 
+.AboutimgBorder>img {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+
+.imgW {
+    width: 90%;
+}
+
+.imgH{
+    height: 90%;
+}
+
 img.imgHeight {
     width: auto;
     height: 80%;
@@ -836,12 +858,12 @@ img.imgHeight {
     }
 }
 
-.cardLink {
+.cardLink, .AboutcardLink {
     text-align: left;
     color: black;
 }
 
-.cardLink {
+.cardLink, .AboutcardLink {
     position: relative;
 }
 
@@ -849,7 +871,7 @@ img.imgHeight {
     position: relative;
 }
 
-.cardLink>h2 {
+.cardLink>h2, .AboutcardLink>h2 {
     display: inline-block;
     margin: 0 0 0 10%;
     font-size: 1.8em;
@@ -878,7 +900,7 @@ img.imgHeight {
     }
 }
 
-.cardLink>h3 {
+.cardLink>h3, .AboutcardLink>h3 {
     margin: 0 0 0 10%;
     color: #636363;
     font-size: 1.1rem;
@@ -901,7 +923,7 @@ img.imgHeight {
     }
 }
 
-.cardList {
+.cardList, .AboutcardList {
     margin-top: 3%;
     list-style-type: none;
     font-family: "Shippori Antique B1", "Mochiy Pop One", sans-serif;
@@ -933,7 +955,7 @@ img.imgHeight {
     margin-top: 5px;
 }
 
-.cardLink::after {
+.cardLink::after, .AboutcardLink::after {
     content: "";
     display: inline-block;
     position: absolute;
@@ -1372,7 +1394,6 @@ input::-webkit-inner-spin-button {
     margin: 40px 0 20px 0;
     padding: 30px;
     background-color: #f3f3f3;
-    min-height: 60vh;
     letter-spacing: 2px;
     border-radius: 5px;
 }
@@ -1382,22 +1403,31 @@ input::-webkit-inner-spin-button {
 }
 
 .canDo{
-    margin: 0 5% 0 5%;
+    margin: 0 5% 10px 5%;
     background-color: #fff9f9;
     border: 5px solid #0f2350;
     border-radius: 50px;
+    padding: 10px 10px;
+}
+.canDoList {
+    list-style-type: none;
+    font-size: 1.1rem;
 }
 
 .plan {
     height: 500px;
     margin: 0 auto;
-    width: 96%;
+    width: 90%;
     /* background-color: blueviolet; */
 }
 
 
 .price {
     margin: 5vh 0 0 0;
+}
+
+.price>h1 {
+    font-size: 1.8rem;
 }
 
 .collapsible {
@@ -1409,13 +1439,14 @@ input::-webkit-inner-spin-button {
     border: none;
     text-align: left;
     outline: none;
-    font-size: 15px;
+    font-size: 1.2rem;
 }
 
 .active,
 .collapsible:hover {
-    background-color: #192f60;
+    background-color: #2a4073;
 }
+
 
 .collapsible:after {
     content: '\002B';
