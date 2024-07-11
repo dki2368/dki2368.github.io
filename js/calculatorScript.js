@@ -12,7 +12,9 @@ const air_freight = [
         w_NO: 1,
         w_Name: "Newatever 基本方案",
         volume: true,
-        volumetric_weight: VW(),
+        volumetric_weight: function getVW() {
+            return VW();
+        },
         shipping_fee: function SF() {
             tempP_V = VW();
             WorV();
@@ -45,7 +47,9 @@ const air_freight = [
         w_NO: 2,
         w_Name: "運匠",
         volume: true,
-        volumetric_weight: VW(),
+        volumetric_weight: function getVW() {
+            return VW();
+        },
         shipping_fee: function SF() {
             tempP_V = VW();
             WorV();
@@ -69,7 +73,9 @@ const air_freight = [
         w_NO: 3,
         w_Name: "奶油貓 買手專線",
         volume: true,
-        volumetric_weight: VW() / 2,
+        volumetric_weight: function getVW() {
+            return VW() / 2;
+        },
         shipping_fee: function SF() {
             tempP_V = VW() / 2;
             WorV();
@@ -99,7 +105,9 @@ const air_freight = [
         w_NO: 4,
         w_Name: "無國界",
         volume: true,
-        volumetric_weight: VW() * 0.75,
+        volumetric_weight: function getVW() {
+            return VW() * 0.75;
+        },
         shipping_fee: function SF() {
             tempP_V = VW() * 0.75;
             WorV();
@@ -130,7 +138,9 @@ const air_freight = [
         w_NO: 5,
         w_Name: "Newatever 免打包出貨",
         volume: true,
-        volumetric_weight: VW(),
+        volumetric_weight: function getVW() {
+            return VW();
+        },
         shipping_fee: function SF() {
             tempP_V = VW();
             WorV();
@@ -156,7 +166,9 @@ const air_freight = [
         w_NO: 6,
         w_Name: "奶油貓 基本方案",
         volume: true,
-        volumetric_weight: VW(),
+        volumetric_weight: function getVW() {
+            return VW();
+        },
         shipping_fee: function SF() {
             tempP_V = VW();
             WorV();
@@ -268,12 +280,19 @@ function w_FS() {
         if (F_end.length == 0) {
             FS_text += "<p>沒有符合的集運</p>";
         } else {
-            FS_text += `
-            集運： ${S_end[0]["w_Name"]} <br>
-            <ul class="data">
-                <li>費用： 約 ${S_end[0].shipping_fee()} 元</li>`;
+            FS_text +=
+                `集運： ${S_end[0]["w_Name"]} <br>
+                <ul class = "data">`
+
+            if (package_weight < S_end[0].volumetric_weight()) {
+                FS_text += `依材積： ${Math.floor(S_end[0].volumetric_weight() * 10) / 10} kg 計費`;
+            }
+
+            FS_text +=
+                `<li>費用： 約 ${S_end[0].shipping_fee()} 元</li>`;
+
             if (getFbox[2].checked) {
-                FS_text += `<li>加強包裝後費用： 約 ${S_end[0].SP_fee()} 元</li>`;
+                FS_text += `<li>含加強包裝費用： <br class="formobile">約 ${S_end[0].SP_fee()} 元</li>`;
             }
             FS_text +=
                 `<li>免費倉儲天數： ${S_end[0]["free_storage"]}</li>
@@ -294,12 +313,20 @@ function w_FS() {
             for (var i = 0; i < S_end.length; i++) {
                 FS_text +=
                     // <li>
-                `集運： ${S_end[i]["w_Name"]} <br>
-                <ul class = "data">
-                <li>費用： 約 ${S_end[i].shipping_fee()} 元`;
-                if (getFbox[2].checked) {
-                    FS_text += `<li>加強包裝後費用： 約 ${S_end[i].SP_fee()} 元`;
+                    `集運： ${S_end[i]["w_Name"]} <br>
+                <ul class = "data">`
+
+                if (package_weight < S_end[i].volumetric_weight()) {
+                    FS_text += `依材積： ${Math.floor(S_end[i].volumetric_weight() * 10) / 10} kg 計費`;
                 }
+
+                FS_text +=
+                    `<li>費用： 約 ${S_end[i].shipping_fee()} 元</li>`;
+
+                if (getFbox[2].checked) {
+                    FS_text += `<li>含加強包裝費用： <br class="formobile">約 ${S_end[i].SP_fee()} 元</li>`;
+                }
+
                 FS_text +=
                     `<li>免費倉儲天數： ${S_end[i]["free_storage"]}</li>
                 <li>寄送天數： ${S_end[i]["days"]}</li>
