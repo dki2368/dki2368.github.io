@@ -991,15 +991,32 @@ img.imgHeight {
     content: "";
     display: inline-block;
     position: absolute;
-    top: 360px;
-    right: 5px;
+    top: 350px;
+    right: 15px;
     background-image: url(../img/icon/zoom_in.svg);
     background-repeat: no-repeat;
     /* margin: 0 0 100px 0; */
-    height: 40px;
-    width: 40px;
+    height: 30px;
+    width: 30px;
     font-size: larger;
     font-family: "Shippori Antique B1", "Mochiy Pop One", sans-serif;
+}
+
+@media(min-width: 768px) {
+
+    .cardLink::after,
+    .AboutcardLink::after {
+        height: 35px;
+        width: 35px;
+    }
+}
+
+@media(min-width: 992px) {
+    .cardLink::after,
+    .AboutcardLink::after {
+        height: 40px;
+        width: 40px;
+    }
 }
 
 /* Next & previous buttons */
@@ -1322,7 +1339,7 @@ input::-webkit-inner-spin-button {
 @media(min-width: 768px) {
     .FSreturn {
         margin: 3vh 7% 0 7%;
-        padding: 5% 10% 0 10%;
+        padding: 2% 10% 0 10%;
         background-color: #f0fdff;
         border-radius: 30px;
         font-size: 1.3rem;
@@ -1400,7 +1417,8 @@ input::-webkit-inner-spin-button {
 }
 
 .logo {
-    width: 100%;
+    width: 90%;
+    padding: 0 5%;
 }
 
 .ConsolidatorTop>h1 {
@@ -1435,7 +1453,7 @@ input::-webkit-inner-spin-button {
     border-radius: 5px;
 }
 
-.aboutHeight{
+.aboutHeight {
     height: 2040px;
     margin: 40px 0 20px 0;
     padding: 30px;
@@ -1445,7 +1463,7 @@ input::-webkit-inner-spin-button {
 }
 
 @media(min-width: 768px) {
-    .aboutHeight{
+    .aboutHeight {
         height: 1080px;
         margin: 40px 0 20px 0;
         padding: 30px;
@@ -1453,7 +1471,7 @@ input::-webkit-inner-spin-button {
 }
 
 @media(min-width: 992px) {
-    .aboutHeight{
+    .aboutHeight {
         height: 700px;
         margin: 50px 0 20px 0;
         padding: 30px;
@@ -1465,11 +1483,18 @@ input::-webkit-inner-spin-button {
 }
 
 .canDo {
-    margin: 0 5% 10px 5%;
+    margin: 30px 3% 10px 3%;
     background-color: #fff9f9;
     border: 5px solid #0f2350;
     border-radius: 50px;
     padding: 10px 10px;
+}
+
+@media(min-width: 768px) {
+    .canDo {
+        margin: 40px 5% 10px 5%;
+        padding: 10px 10px;
+    }
 }
 
 .canDoList {
@@ -1477,8 +1502,20 @@ input::-webkit-inner-spin-button {
     font-size: 1.1rem;
 }
 
+@media(min-width: 768px) {
+    .canDoList {
+        font-size: 1.2rem;
+    }
+}
+
+@media(min-width: 992px) {
+    .canDoList {
+        padding-left: 80px;
+        font-size: 1.2rem;
+    }
+}
+
 .plan {
-    height: 500px;
     margin: 0 auto;
     width: 90%;
     /* background-color: blueviolet; */
@@ -1531,3 +1568,11 @@ input::-webkit-inner-spin-button {
     transition: max-height 0.2s ease-out;
     background-color: #f8fbf8;
 }
+
+@media(min-width: 768px) {
+    .content {
+        font-size: 1.1rem;
+    }
+}
+
+@media(min-width: 992px) {}
