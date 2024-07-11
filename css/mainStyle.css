@@ -49,7 +49,7 @@ main {
     overflow-x: hidden;
 }
 
-.Consolidator{
+.Consolidator {
     background-color: #f3f3f3;
 }
 
@@ -617,7 +617,7 @@ footer {
     top: 22vh;
     left: 10%;
     width: 80vw;
-    height: 58vh;
+    height: 520px;
     background-color: #F8F4E6;
     border-radius: 20px;
 }
@@ -639,7 +639,7 @@ footer {
 @media(min-width: 992px) {
     .infoBG {
         top: 20vh;
-        left: 26%;
+        left: 28%;
         width: 65vw;
         height: 65vh;
         background-image: url(../img/bg/Vector2.png);
@@ -708,9 +708,15 @@ footer {
     position: relative;
     display: flex;
     height: 500px;
-    /* background-color: #6c7ee6; */
     overflow: visible;
-    /* background-color: #000; */
+}
+
+.AboutCardSlider {
+    position: relative;
+    display: flex;
+    height: 500px;
+    overflow: visible;
+    justify-content: center;
 }
 
 .fade {
@@ -736,7 +742,14 @@ footer {
     justify-content: center;
 }
 
-.cards, .AboutCards {
+.AboutCardSpace {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+.cards {
     width: 80%;
     max-width: 1000px;
     height: 400px;
@@ -750,22 +763,6 @@ footer {
     position: relative;
 }
 
-@media(min-width: 768px) {
-    .cards {
-        width: 80%;
-        max-width: 1000px;
-        height: 400px;
-        margin: auto 0 auto 15px;
-        padding: 0;
-        background-color: rgb(248, 235, 235);
-        border-radius: 10px;
-        box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.2);
-        font-family: arial;
-        transition: 0.2s ease;
-        position: relative;
-    }
-}
-
 @media(min-width: 992px) {
     .cards {
         background-color: #ebf6f7;
@@ -775,16 +772,45 @@ footer {
     }
 }
 
-.cards:hover, .AboutCards:hover {
+.AboutCards {
+    width: 300px;
+    height: 400px;
+    margin: 10px 0 30px 0;
+    background-color: #f3f3f3;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.2);
+    font-family: arial;
+    transition: 0.2s ease;
+    position: relative;
+}
+
+@media(min-width: 768px) {
+    .AboutCards {
+        width: 250px;
+        margin: 20px 30px;
+    }
+}
+
+@media(min-width: 992px) {
+    .AboutCards {
+        width: 250px;
+        margin: 50px 30px 20% 30px;
+    }
+}
+
+.cards:hover,
+.AboutCards:hover {
     box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
     transform: scale(1.05);
 }
 
-.cards>a:hover , .AboutcardLink:hover {
+.cards>a:hover,
+.AboutcardLink:hover {
     text-decoration-line: none;
 }
 
-.imgBorder, .AboutimgBorder {
+.imgBorder,
+.AboutimgBorder {
     position: relative;
     width: 100%;
     height: 45%;
@@ -804,11 +830,11 @@ footer {
 
 @media(min-width: 992px) {
     .imgBorder {
-        top:0;
+        top: 0;
         left: -8px;
         width: 400px;
         height: 400px;
-        box-shadow: 8px 0 3px  #165e83;
+        box-shadow: 8px 0 3px #165e83;
     }
 }
 
@@ -835,7 +861,7 @@ footer {
     width: 90%;
 }
 
-.imgH{
+.imgH {
     height: 90%;
 }
 
@@ -858,12 +884,14 @@ img.imgHeight {
     }
 }
 
-.cardLink, .AboutcardLink {
+.cardLink,
+.AboutcardLink {
     text-align: left;
-    color: black;
+    color: #192f60;
 }
 
-.cardLink, .AboutcardLink {
+.cardLink,
+.AboutcardLink {
     position: relative;
 }
 
@@ -871,7 +899,8 @@ img.imgHeight {
     position: relative;
 }
 
-.cardLink>h2, .AboutcardLink>h2 {
+.cardLink>h2,
+.AboutcardLink>h2 {
     display: inline-block;
     margin: 0 0 0 10%;
     font-size: 1.8em;
@@ -900,7 +929,8 @@ img.imgHeight {
     }
 }
 
-.cardLink>h3, .AboutcardLink>h3 {
+.cardLink>h3,
+.AboutcardLink>h3 {
     margin: 0 0 0 10%;
     color: #636363;
     font-size: 1.1rem;
@@ -923,7 +953,8 @@ img.imgHeight {
     }
 }
 
-.cardList, .AboutcardList {
+.cardList,
+.AboutcardList {
     margin-top: 3%;
     list-style-type: none;
     font-family: "Shippori Antique B1", "Mochiy Pop One", sans-serif;
@@ -955,7 +986,8 @@ img.imgHeight {
     margin-top: 5px;
 }
 
-.cardLink::after, .AboutcardLink::after {
+.cardLink::after,
+.AboutcardLink::after {
     content: "";
     display: inline-block;
     position: absolute;
@@ -1159,7 +1191,9 @@ img.imgHeight {
 }
 
 @media(min-width: 992px) {
-    .calculator_col2, #toolPage>.calculator_col2 {
+
+    .calculator_col2,
+    #toolPage>.calculator_col2 {
         font-size: 1.4rem;
         padding-left: 0;
         text-align: center;
@@ -1398,17 +1432,43 @@ input::-webkit-inner-spin-button {
     border-radius: 5px;
 }
 
-.AboutP{
+.aboutHeight{
+    height: 2040px;
+    margin: 40px 0 20px 0;
+    padding: 30px;
+    background-color: #f3f3f3;
+    letter-spacing: 2px;
+    border-radius: 5px;
+}
+
+@media(min-width: 768px) {
+    .aboutHeight{
+        height: 1080px;
+        margin: 40px 0 20px 0;
+        padding: 30px;
+    }
+}
+
+@media(min-width: 992px) {
+    .aboutHeight{
+        height: 700px;
+        margin: 50px 0 20px 0;
+        padding: 30px;
+    }
+}
+
+.AboutP {
     font-size: 1.3rem;
 }
 
-.canDo{
+.canDo {
     margin: 0 5% 10px 5%;
     background-color: #fff9f9;
     border: 5px solid #0f2350;
     border-radius: 50px;
     padding: 10px 10px;
 }
+
 .canDoList {
     list-style-type: none;
     font-size: 1.1rem;
