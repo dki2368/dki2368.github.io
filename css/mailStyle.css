@@ -3,6 +3,7 @@
 /* width */
 ::-webkit-scrollbar {
     width: 10px;
+    background-color: #fff;
 }
 
 /* Track */
@@ -36,17 +37,22 @@ body {
     font-weight: 100;
     font-style: normal;
     margin: 0;
-    padding: 0;
     overflow-x: hidden;
+    /* background: #0f2350; */
+}
+
+main {
+    background-color: #7CCED4;
+    padding-bottom: 5vh;
 }
 
 footer {
-    position: absolute;
-    margin: 0;
+    /* position: absolute; */
+    padding-top: 1px;
     right: 0;
     left: 0;
-    height: 100px;
-    background-color: lightgrey;
+    height: 2vh;
+    background-color: #0f2350;
 }
 
 #headerStyle {
@@ -274,14 +280,14 @@ footer {
     }
 }
 
-.topbgCloud1{
+.topbgCloud1 {
     bottom: 25vh;
     left: 8%;
     width: 30%;
 }
 
 @media(min-width: 768px) {
-    .topbgCloud1{
+    .topbgCloud1 {
         bottom: 26vh;
         left: -8%;
         width: 35%;
@@ -289,28 +295,28 @@ footer {
 }
 
 @media(min-width: 992px) {
-    .topbgCloud1{
+    .topbgCloud1 {
         bottom: 32vh;
         left: 4%;
         width: 20%;
     }
 }
 
-.topbgCloud2{
+.topbgCloud2 {
     top: 12%;
     left: -8%;
     width: 50%;
 }
 
 @media(min-width: 768px) {
-    .topbgCloud2{
+    .topbgCloud2 {
         top: 9%;
         left: 0%;
     }
 }
 
 @media(min-width: 992px) {
-    .topbgCloud2{
+    .topbgCloud2 {
         top: 9%;
         left: 12%;
         width: 28%;
@@ -405,7 +411,7 @@ footer {
         left: auto;
         right: 18%;
         width: 48%;
-    }    
+    }
 }
 
 .topbgCloud {
@@ -427,14 +433,14 @@ footer {
         bottom: -25vh;
         left: -10%;
         width: 120%;
-    }  
+    }
 }
 
 .IndexTop>h1 {
     position: absolute;
     top: 34vh;
     left: auto;
-    right: 15%;
+    right: 17vw;
     margin: 0;
     font-family: "Dela Gothic One", "Shippori Antique B1", sans-serif;
     font-weight: 400;
@@ -507,71 +513,176 @@ footer {
 .info {
     margin-top: 0;
     padding-top: 1px;
-    background-color: #7CCED4;
-    height: 95vh;
+    height: 84vh;
     position: relative;
 }
 
-.info > * {
+@media(min-width: 768px) {
+    .info {
+        height: 74vh;
+    }
+}
+
+@media(min-width: 992px) {
+    .info {
+        height: 90vh;
+    }
+}
+
+.info>* {
     position: absolute;
     overflow: hidden;
 }
 
-.info > img {
+.info>img {
     top: -2%;
     left: -14%;
     width: 120%;
 }
 
-.info > h2 {
-    top: 16vh;
-    left: 15%;
-    z-index: 1;
-    font-size: 6rem;
-    color: #fff;
-    text-shadow: 5px 7px 1px #0f2350;
-    background-image: url(../img/bg/Vector5.png);
-    background-size: contain;
-    background-repeat: no-repeat;
-    width: 450px;
-    height: 250px;
-    padding: 50px 40px 30px 80px;
-    /* background-color: #507ea4;
-    padding: 10px 50px 30px 50px;
-    border: #0f2350 5px dashed;
-    border-radius: 70px; */
-}
-
-.infoBG {
-    top: 20vh;
-    left: 30%;
-    width: 65vw;
-    height: 65vh;
-    background-image: url(../img/bg/Vector2.png);
-    background-size: contain;
-    background-repeat: no-repeat;
-}
-
 @media(min-width: 768px) {
-    .info > img {
+    .info>img {
         left: -9%;
         width: 110%;
     }
 }
 
 @media(min-width: 992px) {
-    .info > img {
+    .info>img {
         width: 100%;
     }
+}
+
+.info>h2 {
+    top: 3vh;
+    left: 8%;
+    z-index: 1;
+    font-size: 3.8rem;
+    color: #fff;
+    text-shadow: 5px 7px 1px #0f2350;
+    background-image: url(../img/bg/Vector5.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 350px;
+    height: 140px;
+    padding: 15px 40px 15px 35px;
+}
+
+@media(min-width: 768px) {
+    .info>h2 {
+        top: 5vh;
+    }
+}
+
+@media(min-width: 992px) {
+    .info>h2 {
+        top: 11vh;
+        left: 15%;
+        font-size: 6rem;
+        width: 430px;
+        height: 230px;
+        padding: 50px 40px 30px 80px;
+    }
+}
+
+.infoBG {
+    top: 22vh;
+    left: 10%;
+    width: 80vw;
+    height: 58vh;
+    background-color: #F8F4E6;
+    border-radius: 20px;
+}
+
+@media(min-width: 768px) {
+    .infoBG {
+        top: 18vh;
+        left: 6%;
+        width: 86vw;
+        height: 60vh;
+        background-color: transparent;
+        background-image: url(../img/bg/Vector2.png);
+        background-size: contain;
+        background-repeat: no-repeat;
+
+    }
+}
+
+@media(min-width: 992px) {
+    .infoBG {
+        top: 20vh;
+        left: 26%;
+        width: 65vw;
+        height: 65vh;
+        background-image: url(../img/bg/Vector2.png);
+    }
+}
+
+.infoBG>p {
+    margin: 20% 0 0 8%;
+    letter-spacing: 3px;
+    width: 65vw;
+    font-size: 1.4rem;
+}
+
+@media(min-width: 768px) {
+    .infoBG>p {
+        margin: 15% 0 0 15%;
+        letter-spacing: 3px;
+        width: 65vw;
+        font-size: 1.4rem;
+    }
+}
+
+@media(min-width: 992px) {
+    .infoBG>p {
+        margin: 12% 0 0 25%;
+        width: 52%;
+        font-size: 1.8rem;
+    }
+}
+
+.infoBG>a {
+    display: inline-block;
+    margin: 20% 0 0 27%;
+    padding: 2% 8%;
+    background-color: transparent;
+    border: 5px dashed #164A84;
+    border-radius: 5px;
+    transition: 0.1s ease;
+    font-size: 1.5rem;
+    color: #164A84;
+    text-decoration: none;
+}
+
+@media(min-width: 768px) {
+    .infoBG>a {
+        margin: 24% 0 0 35%;
+    }
+}
+
+@media(min-width: 992px) {
+    .infoBG>a {
+        margin: 5% 0 0 40%;
+    }
+}
+
+.infoBG>a:hover {
+    background-color: #164A84;
+    color: #fff;
+    border: 5px solid #164A84;
+    transform: scale(1.06);
+    border-radius: 15px;
 }
 
 /* 輪播卡片 */
 .CardSlider {
     position: relative;
     display: flex;
-    height: 600px;
-    background-color: #6c7ee6;
+    height: 500px;
+    /* background-color: #6c7ee6; */
     overflow: visible;
+    background-color: #000;
 }
 
 .fade {
@@ -732,54 +843,113 @@ footer {
 
 
 /* 計算機 */
-/* .calculator {
-    position: fixed;
-    margin: auto;
-    bottom: -50px;
-    left: 0;
-    right: 0;
-    width: 800px;
+.calculator {
+    margin: 5vh 10% 0 10%;
     padding: 0px 20px 20px 15px;
     background-color: #fff;
-    border: 1px solid rgb(151, 200, 255);
-    border-radius: 30px 30px 0 0;
-    box-shadow: 1px 3px 10px rgb(164, 192, 224);
-    overflow-y: hidden;
-    max-height: 100px;
-    transition: max-height 0.3s linear, bottom 0.3s linear;
+    border: 3px solid #164A84;
+    border-radius: 30px;
+    /* box-shadow: 1px 3px 10px rgb(164, 192, 224); */
+    /* overflow-y: hidden; */
 }
 
-.calculator:hover {
-    bottom: 0;
-    max-height: 380px;
-} */
+@media(min-width: 768px) {}
 
-.calculator {
-    margin: 50px 10%;
-    padding: 0px 20px 20px 15px;
-    background-color: #fff;
-    border: 1px solid rgb(151, 200, 255);
-    border-radius: 30px;
-    box-shadow: 1px 3px 10px rgb(164, 192, 224);
-    overflow-y: hidden;
+@media(min-width: 992px) {
+    .calculator {
+        margin: 15hv 10% 5vh 10%;
+        padding: 1vh 20px 5vh 15px;
+        background-color: #fff;
+        border: 5px solid #164A84;
+        border-radius: 30px;
+        /* overflow-y: hidden; */
+        transition: max-height 0.5s linear;
+    }
+
 }
 
 .hideTool {
-    max-height: 180px;
-    transition: max-height 0.5s linear;
+    max-height: 250px;
+}
+
+@media(min-width: 768px) {
+    .hideTool {
+        max-height: 180px;
+    }
+
+}
+
+@media(min-width: 992px) {
+    .hideTool {
+        max-height: 180px;
+    }
+
 }
 
 .hideTool:hover {
-    max-height: 300px;
+    max-height: 500px;
 }
 
-.calculator>H2 {
+@media(min-width: 768px) {
+    .hideTool:hover {
+        max-height: 300px;
+    }
+}
+
+@media(min-width: 992px) {
+    .hideTool:hover {
+        max-height: 300px;
+    }
+}
+
+.calculator>h2 {
     text-align: center;
+    font-size: 2rem;
+    color: #0f2350;
+}
+
+@media(min-width: 768px) {
+    .calculator>h2 {
+        text-align: center;
+        font-size: 2.5rem;
+        color: #0f2350;
+    }
+}
+
+@media(min-width: 992px) {
+    .calculator>h2 {
+        font-size: 3rem;
+    }
 }
 
 .calculator_col1 {
     text-align: center;
     font-size: large;
+    line-height: 35px;
+}
+
+@media(min-width: 768px) {
+    .calculator_col1 {
+        text-align: center;
+        font-size: 1.3rem;
+    }
+}
+
+@media(min-width: 992px) {
+    .calculator_col1 {
+        text-align: center;
+        font-size: 1.6rem;
+    }
+}
+
+.formobile {
+    display: inline;
+}
+
+@media(min-width: 768px) {
+    .formobile {
+        display: none;
+    }
 }
 
 .calculator_col1>.cal_padding {
@@ -787,11 +957,48 @@ footer {
 }
 
 .calculator_col2 {
-    padding-left: 40px;
+    padding-left: 20px;
+    line-height: 30px;
+}
+
+@media(min-width: 768px) {
+    .calculator_col2 {
+        font-size: 1.1rem;
+        padding-left: 10px;
+    }
+}
+
+@media(min-width: 992px) {
+    .calculator_col2 {
+        font-size: 1.4rem;
+        padding-left: 0;
+        text-align: center;
+    }
 }
 
 .calculator_col2>.cal_padding {
     padding: 5px;
+}
+
+.calculator_col3 {
+    text-align: center;
+    font-size: 1.2rem;
+}
+
+@media(min-width: 768px) {
+    .calculator_col3 {
+        margin-top: 2.5vh;
+        text-align: center;
+        font-size: 1.2rem;
+    }
+}
+
+@media(min-width: 992px) {
+    .calculator_col3 {
+        margin-top: 5vh;
+        text-align: center;
+        font-size: 1.6rem;
+    }
 }
 
 #i_Weight,
@@ -827,8 +1034,20 @@ input::-webkit-inner-spin-button {
 #w_Sort {
     padding: 3px;
     border-radius: 10px;
-    font-size: 1rem;
+    font-size: 1.1rem;
     text-align: center;
+}
+
+@media(min-width: 768px) {
+    #w_Sort {
+        font-size: 1.2rem;
+    }
+}
+
+@media(min-width: 992px) {
+    #w_Sort {
+        font-size: 1.4rem;
+    }
 }
 
 #btn_wFilterSort {
@@ -855,26 +1074,53 @@ input::-webkit-inner-spin-button {
     box-shadow: 2px 2px 3px rgb(21, 42, 61) inset;
 }
 
-.FSscroll {
-    overflow-y: scroll;
+.FSreturn {
+    margin: 3vh 3% 0 3%;
+    padding: 3% 3% 0 3%;
+    background-color: #f0fdff;
+    border-radius: 30px;
+    font-size: 1.1rem;
 }
 
-.FSscroll::-webkit-scrollbar {
-    width: 10px;
-    background-color: #F5F5F5;
+@media(min-width: 768px) {
+    .FSreturn {
+        margin: 3vh 7% 0 7%;
+        padding: 3% 5% 0 5%;
+        background-color: #f0fdff;
+        border-radius: 30px;
+        font-size: 1.3rem;
+    }
 }
 
-.FSscroll::-webkit-scrollbar-track {
-    border-radius: 10px;
+@media(min-width: 992px) {
+    .FSreturn {
+        font-size: 1.4rem;
+    }
 }
 
-.FSscroll::-webkit-scrollbar-thumb {
-    border-radius: 10px;
-    background: rgb(187, 214, 255);
+.data, .FSreturn > ul {
+    list-style-type: none;
 }
 
-.FSscroll::-webkit-scrollbar-thumb:hover {
-    background: #6c7ee6;
+.data {
+    margin: 8px;
+    line-height: 25px;
+}
+
+@media(min-width: 768px) {
+    .data {
+        margin: 10px;
+        line-height: 50px;
+    }
+    
+}
+
+@media(min-width: 992px) {
+    .data {
+        margin: 10px;
+        line-height: 70px;
+    }
+    
 }
 
 

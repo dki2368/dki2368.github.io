@@ -227,15 +227,15 @@ function w_FS() {
 
     // 取得篩選選項
     var temp_forF = air_freight;
-    var temp_Fend = [temp_forF, temp_forF, temp_forF, temp_forF, temp_forF, temp_forF];
+    var temp_Fend = [temp_forF, temp_forF, temp_forF, temp_forF, temp_forF];
     var getFbox = document.getElementsByName("w_Filter");
 
     if (getFbox[0].checked) temp_Fend[0] = temp_Fend[0].filter(element => element["tax_free"] == true);
     if (getFbox[1].checked) temp_Fend[1] = temp_Fend[1].filter(element => element["free_consolidation"] == true);
     if (getFbox[2].checked) temp_Fend[2] = temp_Fend[2].filter(element => element["strength_packaging"] == true);
-    if (getFbox[3].checked) temp_Fend[3] = temp_Fend[3].filter(element => element["volume"] == false);
-    if (getFbox[4].checked) temp_Fend[4] = temp_Fend[4].filter(element => element["ordinary_mail"] == true);
-    if (getFbox[5].checked) temp_Fend[5] = temp_Fend[5].filter(element => element["COD"] == true);
+    // if (getFbox[3].checked) temp_Fend[3] = temp_Fend[3].filter(element => element["volume"] == false);
+    if (getFbox[3].checked) temp_Fend[3] = temp_Fend[3].filter(element => element["ordinary_mail"] == true);
+    if (getFbox[4].checked) temp_Fend[4] = temp_Fend[4].filter(element => element["COD"] == true);
 
     var F_end = [];
     F_end = temp_Fend[0].filter((e) => { return temp_Fend[1].indexOf(e) > -1 });
@@ -270,15 +270,15 @@ function w_FS() {
         } else {
             FS_text += `<ul>
             <li>
-            集運： ${S_end[0]["w_Name"]} <br>
-            <ul>
-                <li>費用： 約 ${S_end[0].shipping_fee()} 元 <br> ${S_end[0]["shipping_rate"]}</li>`;
+            集運： <br class="formobile">${S_end[0]["w_Name"]} <br>
+            <ul class="data">
+                <li>費用： 約 ${S_end[0].shipping_fee()} 元</li>`;
             if (getFbox[2].checked) {
-                FS_text += `<li>加強包裝後費用： 約 ${S_end[0].SP_fee()} 元 <br> ${S_end[0]["SP_rate"]}</li>`;
+                FS_text += `<li>加強包裝後費用： 約 ${S_end[0].SP_fee()} 元</li>`;
             }
             FS_text +=
                 `<li>免費倉儲天數： ${S_end[0]["free_storage"]}</li>
-                <li>申請打包後配達天數： ${S_end[0]["days"]}</li>
+                <li>寄送天數： ${S_end[0]["days"]}</li>
             </ul> </li> <br>`
         }
         FS_text += `</ul></div>`;
@@ -296,7 +296,7 @@ function w_FS() {
                 FS_text +=
                     `<li>
                 集運： ${S_end[i]["w_Name"]} <br>
-                <ul>
+                <ul class = "data">
                 <li>費用： 約 ${S_end[i].shipping_fee()} 元 <br> ${S_end[i]["shipping_rate"]}</li>`;
                 if (getFbox[2].checked) {
                     FS_text += `<li>加強包裝後費用： 約 ${S_end[i].SP_fee()} 元 <br> ${S_end[i]["SP_rate"]}</li>`;

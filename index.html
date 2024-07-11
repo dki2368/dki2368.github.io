@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>集運</title>
+    <title>日本集運推薦工具</title>
     <link rel="stylesheet" href="./css/mailStyle.css">
 </head>
 
@@ -55,41 +55,12 @@
             <img src="./img/bg/bgimg.png">
             <h2>關於集運</h2>
             <div class="infoBG">
-                <p></p>
-                <a href="">了解更多</a>
-            </div>
-        </div>
-        <div>
-            <div class="calculator hideTool">
-                <H2>快速搜尋</H2>
-                <p class="calculator_col1">重量：<input type="number" id="i_Weight" required> kg
-                    <span class="cal_padding"></span>
-                    包裹大小：
-                    <input type="number" id="i_PL" class="i_PV"> x
-                    <input type="number" id="i_PW" class="i_PV"> x
-                    <input type="number" id="i_PH" class="i_PV"> cm
-                    <span class="cal_padding"></span>
-                    <span style="padding: 0 5px 0 0;">照</span>
-                    <select id="w_Sort">
-                        <option value="1" selected>價格低到高</option>
-                        <option value="2">免費倉儲天數多到少</option>
-                        <option value="3">運輸天數短到長</option>
-                    </select>
-                    <span style="padding: 0 0 0 5px;">排序</span>
+                <p>集運，是一種能從海外購物後將包裹送到當地指定倉庫，並將多個包裹統一送到海外地址（台灣）的服務
+                    <br><br>讓人不需透過代購代買，即能輕鬆購買海外網路店家的商品
                 </p>
-                <div class="calculator_col2">
-                    <input type="checkbox" name="w_Filter"> 包稅<span class="cal_padding"></span>
-                    <input type="checkbox" name="w_Filter"> 免費合箱<span class="cal_padding"></span>
-                    <input type="checkbox" name="w_Filter"> 加強包裝<span class="cal_padding"></span>
-                    <input type="checkbox" name="w_Filter"> 不計材積<span class="cal_padding"></span>
-                    <input type="checkbox" name="w_Filter"> 可收平信<span class="cal_padding"></span>
-                    <input type="checkbox" name="w_Filter"> 日本當地貨到付款<span class="cal_padding"></span>
-                    <button id="btn_wFilterSort">送 出</button>
-                </div>
-                <div id="searchFS"></div>
+                <a href="./about.html">了解更多</a>
             </div>
         </div>
-
         <div class="CardSlider">
             <div class="CardSpace">
                 <article class="cards fade">
@@ -186,12 +157,46 @@
             <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
             <a class="next" onclick="plusSlides(1)">&#10095;</a>
         </div>
+        <div>
+            <div class="calculator">
+                <H2>快速搜尋</H2>
+                <p class="calculator_col1">重量：<input type="number" id="i_Weight" required> kg
+                    <span class="cal_padding"></span><br class="formobile">
+                    包裹大小：
+                    <input type="number" id="i_PL" class="i_PV"> x
+                    <input type="number" id="i_PW" class="i_PV"> x
+                    <input type="number" id="i_PH" class="i_PV"> cm
+                    <!-- <span class="cal_padding"></span> -->
+                </p>
+                <div class="calculator_col2">
+                    <input type="checkbox" name="w_Filter"> 包稅<span class="formobile">　　</span><span
+                        class="cal_padding"></span>
+                    <input type="checkbox" name="w_Filter"> 免費合箱<span class="cal_padding"></span>
+                    <br class="formobile">
+                    <input type="checkbox" name="w_Filter"> 加強包裝<span class="cal_padding"></span>
+                    <!-- <input type="checkbox" name="w_Filter"> 不計材積<span class="cal_padding"></span> -->
+                    <input type="checkbox" name="w_Filter"> 可收平信<span class="cal_padding"></span>
+                    <br class="formobile">
+                    <input type="checkbox" name="w_Filter"> 日本當地貨到付款<span class="cal_padding"></span>
+                </div>
+                <p class="calculator_col3">
+                    <span style="margin: 0 5px 0 0;">推薦</span>
+                    <select id="w_Sort">
+                        <option value="1" selected>價格最便宜</option>
+                        <option value="2">免費倉儲天數最久</option>
+                        <option value="3">運輸時間最短</option>
+                    </select>
+                    <span style="padding: 0 0 0 5px;">的集運</span>
+                    <br class="formobile">
+                    <br class="formobile">
+                    <button id="btn_wFilterSort">送 出</button>
+                </p>
+                <div id="searchFS"></div>
+            </div>
+        </div>
     </main>
-
     <footer>
-        <p>footer</p>
     </footer>
-
     <script src="./js/mainScript.js"></script>
     <script src="./js/calculatorScript.js"></script>
 </body>
