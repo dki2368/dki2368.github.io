@@ -37,13 +37,13 @@ body {
     font-weight: 100;
     font-style: normal;
     margin: 0;
-    overflow-x: hidden;
-    /* background: #0f2350; */
 }
 
 main {
     background-color: #7CCED4;
     padding-bottom: 5vh;
+    overflow-x: hidden;
+    width: 100vw;
 }
 
 footer {
@@ -682,7 +682,7 @@ footer {
     height: 500px;
     /* background-color: #6c7ee6; */
     overflow: visible;
-    background-color: #000;
+    /* background-color: #000; */
 }
 
 .fade {
@@ -734,13 +734,27 @@ footer {
 
 .imgBorder {
     position: relative;
-    top: 20%;
-    left: -15px;
-    width: 220px;
-    height: 220px;
+    width: 100%;
+    height: 45%;
     background-color: #fff;
     border-radius: 10px;
     overflow: hidden;
+}
+
+@media(min-width: 768px) {
+    .imgBorder {
+        position: relative;
+        top: 20%;
+        left: -15px;
+        width: 220px;
+        height: 220px;
+        background-color: #fff;
+        border-radius: 10px;
+        overflow: hidden;
+    }
+}
+
+@media(min-width: 992px) {
 }
 
 .imgBorder>img {
