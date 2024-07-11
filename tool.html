@@ -5,25 +5,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>日本集運推薦工具｜搜尋工具</title>
-    <link rel="stylesheet" href="./css/mailStyle.css">
+    <link rel="stylesheet" href="./css/mainStyle.css">
 </head>
 
 <body>
     <header id="headerStyle">
         <nav id="navLinkes">
             <a href="./index.html" class="navInfo">Home</a>
-            <a href="./about.html" class="navInfo">About</a>
-            <a href="" class="navInfo">Consolidator
-                <ul>
-                    <li class="navMore">aaa</li>
-                    <li class="navMore">aaa</li>
-                    <li class="navMore">aaa</li>
-                    <li class="navMore">aaa</li>
-                </ul>
-            </a>
+            <a href="" class="navInfo navNow">About</a>
+            <!-- <a href="" class="navInfo">Consolidator</a> -->
             <a href="./QA.html" class="navInfo">Q<small>&</small>A</a>
-            <a href="" class="navInfo navNow">Tool</a>
-            <a href="./login.html" id="navLogin">Sign in</a>
+            <a href="./tool.html" class="navInfo">Tool</a>
         </nav>
         <span id="openMenu" onclick="openNav()"><img src="./img/icon/menu.svg" alt=""></span>
         <div id="myNav" class="overlay">
@@ -31,15 +23,20 @@
             <div class="overlay-content">
                 <a href="./index.html">Home</a>
                 <a href="./about.html">About</a>
-                <a href="">Consolidator</a>
+                <!-- <a href="">Consolidator</a> -->
                 <a href="./QA.html">Q<small>&</small>A</a>
-                <a href="">Tool</a>
+                <a href="./tool.html">Tool</a>
             </div>
         </div>
     </header>
     <main>
         <div class="pageTop">
-
+            <div class="TopBG">
+                <img class="topbgSun" src="./img/bg/sun_cloud_seagull.png">
+                <img class="topbgCloud2" src="./img/bg/cloud_s2.png">
+                <img class="topbgSeagull2" src="./img/bg/seagull_2.png">
+            </div>
+            <h1>篩選工具</h1>
         </div>
         <article class="pageArticle">
 
@@ -48,38 +45,44 @@
             <div>
                 <br>
             </div>
-            <div class="calculator">
+            <div class="calculator" id="toolPage">
                 <H2>運費估算工具</H2>
                 <p class="calculator_col1">重量：<input type="number" id="i_Weight" required> kg
-                    <span class="cal_padding"></span>
+                    <span class="cal_padding"></span><br class="formobile">
                     包裹大小：
                     <input type="number" id="i_PL" class="i_PV"> x
                     <input type="number" id="i_PW" class="i_PV"> x
                     <input type="number" id="i_PH" class="i_PV"> cm
-                    <span class="cal_padding"></span>
-                    <span style="padding: 0 5px 0 0;">照</span>
+                    <!-- <span class="cal_padding"></span> -->
+                </p>
+                <div class="calculator_col2">
+                    <input type="checkbox" name="w_Filter"> 包稅<span class="formobile">　　</span><span
+                        class="cal_padding"></span>
+                    <input type="checkbox" name="w_Filter"> 免費合箱<span class="cal_padding"></span>
+                    <br class="formobile">
+                    <input type="checkbox" name="w_Filter"> 加強包裝<span class="cal_padding"></span>
+                    <!-- <input type="checkbox" name="w_Filter"> 不計材積<span class="cal_padding"></span> -->
+                    <input type="checkbox" name="w_Filter"> 可收平信<span class="cal_padding"></span>
+                    <br class="formobile">
+                    <input type="checkbox" name="w_Filter"> 日本當地貨到付款<span class="cal_padding"></span>
+                </div>
+                <p class="calculator_col3">
+                    <span style="margin: 0 5px 0 0;">依</span>
                     <select id="w_Sort">
                         <option value="4" selected>價格低到高</option>
                         <option value="5">免費倉儲天數多到少</option>
-                        <option value="6">運輸天數短到長</option>
+                        <option value="6">運輸時間短到長</option>
                     </select>
                     <span style="padding: 0 0 0 5px;">排序</span>
-                </p>
-                <div class="calculator_col2">
-                    <input type="checkbox" name="w_Filter"> 包稅<span class="cal_padding"></span>
-                    <input type="checkbox" name="w_Filter"> 免費合箱<span class="cal_padding"></span>
-                    <input type="checkbox" name="w_Filter"> 加強包裝<span class="cal_padding"></span>
-                    <input type="checkbox" name="w_Filter"> 不計材積<span class="cal_padding"></span>
-                    <input type="checkbox" name="w_Filter"> 可收平信<span class="cal_padding"></span>
-                    <input type="checkbox" name="w_Filter"> 日本當地貨到付款<span class="cal_padding"></span>
+                    <br class="formobile">
+                    <br class="formobile">
                     <button id="btn_wFilterSort">送 出</button>
-                </div>
+                </p>
                 <div id="searchFS"></div>
             </div>
         </article>
     </main>
     <footer>
-        <p>footer</p>
     </footer>
 
     <script src="./js/mainScript.js"></script>

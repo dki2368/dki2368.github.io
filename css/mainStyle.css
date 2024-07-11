@@ -37,13 +37,15 @@ body {
     font-weight: 100;
     font-style: normal;
     margin: 0;
+    width: 100vw;
+    overflow-x: hidden;
 }
 
 main {
     background-color: #7CCED4;
     padding-bottom: 5vh;
-    overflow-x: hidden;
     width: 100vw;
+    overflow-x: hidden;
 }
 
 footer {
@@ -256,16 +258,37 @@ footer {
 
 .TopBG>img {
     position: absolute;
+    overflow: hidden;
 }
 
 .topbgSun {
+    top: 15vh;
+    right: 0%;
+    width: 50%;
+}
+
+@media(min-width: 768px) {
+    .topbgSun {
+        top: 15vh;
+        width: 35%;
+    }
+}
+
+@media(min-width: 992px) {
+    .topbgSun {
+        top: 12vh;
+        width: 23%;
+    }
+}
+
+#IndexSun {
     top: 15vh;
     right: -10%;
     width: 50%;
 }
 
 @media(min-width: 768px) {
-    .topbgSun {
+    #IndexSun {
         top: 15vh;
         right: -3%;
         width: 35%;
@@ -273,7 +296,7 @@ footer {
 }
 
 @media(min-width: 992px) {
-    .topbgSun {
+    #IndexSun {
         top: 12vh;
         right: 6%;
         width: 23%;
@@ -475,30 +498,30 @@ footer {
     }
 }
 
-
 .pageTop {
-    background-color: #263ec7;
-    height: 12lh;
+    height: 12.5lh;
+    background-color: #C1E6EC;
+    overflow: hidden;
 }
 
 @media(min-width: 768px) {
     .pageTop {
-        background-color: #263ec7;
         height: 15lh;
     }
 }
 
-
 .pageTop>h1 {
-    padding: 3lh 0 0 10%;
-    color: #fff;
+    padding: 3lh 0 0 8%;
+    color: #0f2350;
     font-size: 45px;
     position: absolute;
+    /* font-family: "Dela Gothic One", "Shippori Antique B1", sans-serif; */
+
 }
 
 @media(min-width: 768px) {
     .pageTop>h1 {
-        padding: 2lh 0 0 8%;
+        padding: 2.2lh 0 0 8%;
         font-size: 65px;
     }
 }
@@ -983,8 +1006,6 @@ img.imgHeight {
     /* overflow-y: hidden; */
 }
 
-@media(min-width: 768px) {}
-
 @media(min-width: 992px) {
     .calculator {
         margin: 15hv 10% 5vh 10%;
@@ -995,7 +1016,12 @@ img.imgHeight {
         /* overflow-y: hidden; */
         transition: max-height 0.5s linear;
     }
+}
 
+#toolPage {
+    margin: 0 0 3vh 0;
+    padding: 0 0 0 0;
+    box-shadow: 2px 5px 8px #85858591;
 }
 
 .hideTool {
@@ -1091,6 +1117,11 @@ img.imgHeight {
     line-height: 30px;
 }
 
+#toolPage>.calculator_col2 {
+    padding-left: 3dvh;
+    line-height: 30px;
+}
+
 @media(min-width: 768px) {
     .calculator_col2 {
         font-size: 1.1rem;
@@ -1098,8 +1129,15 @@ img.imgHeight {
     }
 }
 
+@media(min-width: 768px) {
+    #toolPage>.calculator_col2 {
+        font-size: 1.1rem;
+        padding-left: 5px;
+    }
+}
+
 @media(min-width: 992px) {
-    .calculator_col2 {
+    .calculator_col2, #toolPage>.calculator_col2 {
         font-size: 1.4rem;
         padding-left: 0;
         text-align: center;
@@ -1108,6 +1146,18 @@ img.imgHeight {
 
 .calculator_col2>.cal_padding {
     padding: 5px;
+}
+
+@media(min-width: 768px) {
+    #toolPage>.calculator_col2>.cal_padding {
+        padding: 3px;
+    }
+}
+
+@media(min-width: 992px) {
+    #toolPage>calculator_col2 {
+        padding: 5px;
+    }
 }
 
 .calculator_col3 {
@@ -1258,7 +1308,7 @@ input::-webkit-inner-spin-button {
 /* Consolidator 公版 */
 .logoSpace {
     position: absolute;
-    top: 200px;
+    top: 250px;
     left: 0;
     right: 0;
     margin: auto;
@@ -1272,7 +1322,6 @@ input::-webkit-inner-spin-button {
 
 @media(min-width: 768px) {
     .logoSpace {
-        top: 300px;
         left: 10%;
         right: auto;
         margin: auto;
@@ -1297,14 +1346,14 @@ input::-webkit-inner-spin-button {
 }
 
 .ConsolidatorTop>h1 {
-    margin: 120px 0 0 0;
+    margin: 100px 0 0 0;
     text-align: center;
     font-size: 40px;
 }
 
 @media(min-width: 768px) {
     .ConsolidatorTop>h1 {
-        margin: 120px 0 0 13%;
+        margin: -20px 0 0 13%;
         padding: 0 0 0 250px;
         font-size: 60px;
         text-align: left;
@@ -1313,37 +1362,46 @@ input::-webkit-inner-spin-button {
 
 @media(min-width: 992px) {
     .ConsolidatorTop>h1 {
-        margin: 120px 0 0 13%;
+        margin: 40px 0 0 13%;
         padding: 0 0 0 300px;
         font-size: 60px;
     }
 }
 
 .pageArticle {
-    margin: 20px 2%;
-    background-color: #e1e3f0;
+    margin: 40px 0 20px 0;
+    padding: 30px;
+    background-color: #f3f3f3;
+    min-height: 60vh;
+    letter-spacing: 2px;
+    border-radius: 5px;
 }
 
-@media(min-width: 768px) {
-    .pageArticle {
-        margin: 80px 5% 20px 5%;
-    }
+.AboutP{
+    font-size: 1.3rem;
 }
 
-@media(min-width: 992px) {
-    .pageArticle {
-        margin: 80px 8% 20px 8%;
-    }
+.canDo{
+    margin: 0 5% 0 5%;
+    background-color: #fff9f9;
+    border: 5px solid #0f2350;
+    border-radius: 50px;
 }
 
 .plan {
     height: 500px;
     margin: 0 auto;
     width: 96%;
+    /* background-color: blueviolet; */
+}
+
+
+.price {
+    margin: 5vh 0 0 0;
 }
 
 .collapsible {
-    background-color: #777;
+    background-color: #007bbb;
     color: white;
     cursor: pointer;
     padding: 18px;
@@ -1356,7 +1414,7 @@ input::-webkit-inner-spin-button {
 
 .active,
 .collapsible:hover {
-    background-color: #555;
+    background-color: #192f60;
 }
 
 .collapsible:after {
@@ -1374,7 +1432,8 @@ input::-webkit-inner-spin-button {
 .content {
     padding: 0 18px;
     max-height: 0;
+    margin-bottom: 15px;
     overflow: hidden;
     transition: max-height 0.2s ease-out;
-    background-color: #f1f1f1;
+    background-color: #f8fbf8;
 }

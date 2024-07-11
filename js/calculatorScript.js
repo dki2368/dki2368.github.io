@@ -304,7 +304,7 @@ function w_FS() {
                 FS_text +=
                     `<li>免費倉儲天數： ${S_end[i]["free_storage"]}</li>
                 <li>申請打包後配達天數： ${S_end[i]["days"]}</li>
-                </ul> </li> <br>`
+                </ul> </li><hr><br>`
             }
             FS_text += `</ul></div>`;
         }
