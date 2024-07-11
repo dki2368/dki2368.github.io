@@ -263,14 +263,13 @@ function w_FS() {
     // 印出
     if (getSvalue <= 3) {
         // 印出最符合條件的
-        var FS_text = `<div class="FSreturn"><p>推薦使用：</p>`;
-
+        var FS_text = `<div class="FSreturn">`;
+        // <p>推薦使用：</p>
         if (F_end.length == 0) {
             FS_text += "<p>沒有符合的集運</p>";
         } else {
-            FS_text += `<ul>
-            <li>
-            集運： <br class="formobile">${S_end[0]["w_Name"]} <br>
+            FS_text += `
+            集運： ${S_end[0]["w_Name"]} <br>
             <ul class="data">
                 <li>費用： 約 ${S_end[0].shipping_fee()} 元</li>`;
             if (getFbox[2].checked) {
@@ -278,35 +277,37 @@ function w_FS() {
             }
             FS_text +=
                 `<li>免費倉儲天數： ${S_end[0]["free_storage"]}</li>
-                <li>寄送天數： ${S_end[0]["days"]}</li>
-            </ul> </li> <br>`
+                <li>寄送天數： ${S_end[0]["days"]}</li>`
         }
         FS_text += `</ul></div>`;
         document.getElementById("searchFS").innerHTML = FS_text;
 
     } else {
         // 印出所有符合條件的
-        var FS_text = `<div class="FSreturn FSscroll"><p>符合條件的集運：</p>`;
+        var FS_text = `<div class="FSreturn FSscroll">`;
+        // <p>符合條件的集運：</p>
 
         if (F_end.length == 0) {
             FS_text += "<p>沒有符合的集運</p>";
         } else {
-            FS_text += "<ul>";
+            // FS_text += "<ul>";
             for (var i = 0; i < S_end.length; i++) {
                 FS_text +=
-                    `<li>
-                集運： ${S_end[i]["w_Name"]} <br>
+                    // <li>
+                `集運： ${S_end[i]["w_Name"]} <br>
                 <ul class = "data">
-                <li>費用： 約 ${S_end[i].shipping_fee()} 元 <br> ${S_end[i]["shipping_rate"]}</li>`;
+                <li>費用： 約 ${S_end[i].shipping_fee()} 元`;
                 if (getFbox[2].checked) {
-                    FS_text += `<li>加強包裝後費用： 約 ${S_end[i].SP_fee()} 元 <br> ${S_end[i]["SP_rate"]}</li>`;
+                    FS_text += `<li>加強包裝後費用： 約 ${S_end[i].SP_fee()} 元`;
                 }
                 FS_text +=
                     `<li>免費倉儲天數： ${S_end[i]["free_storage"]}</li>
-                <li>申請打包後配達天數： ${S_end[i]["days"]}</li>
-                </ul> </li><hr><br>`
+                <li>寄送天數： ${S_end[i]["days"]}</li>
+                </ul><hr>`
             }
-            FS_text += `</ul></div>`;
+            // </li>
+            // FS_text += `</ul></div>`;
+            FS_text += `</div>`;
         }
         document.getElementById("searchFS").innerHTML = FS_text;
     }
