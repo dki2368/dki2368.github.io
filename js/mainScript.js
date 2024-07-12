@@ -10,7 +10,7 @@ function scrollFunction() {
     document.getElementById("headerStyle").style.backgroundColor = "#feffff";
     document.getElementById("navLinkes").style.lineHeight = "60px";
     document.getElementById("navLogin").style.margin = "8px 20px 0 auto";
-    document.getElementById("openMenu").style.margin = "10px auto auto 85%";
+    // document.getElementById("openMenu").style.margin = "10px auto auto 85%";
 
   } else {
     document.getElementById("headerStyle").style.height = "80px";
@@ -19,7 +19,7 @@ function scrollFunction() {
     document.getElementById("headerStyle").style.backgroundColor = "#C1E6EC";
     document.getElementById("navLinkes").style.lineHeight = "80px";
     document.getElementById("navLogin").style.margin = "18px 20px 0 auto";
-    document.getElementById("openMenu").style.margin = "20px auto auto 85%";
+    // document.getElementById("openMenu").style.margin = "20px auto auto 85%";
   }
 }
 

@@ -177,10 +177,14 @@ footer {
 }
 
 #openMenu {
-    margin: 20px auto auto 85%;
+    margin: 10px auto auto 86%;
     font-size: 30px;
     cursor: pointer;
     transition: 0.3s ease;
+    background-image: url(../img/icon/menu.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    height: 45px;
 }
 
 #openMenu,
