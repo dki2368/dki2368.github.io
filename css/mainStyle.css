@@ -177,7 +177,7 @@ footer {
 }
 
 #openMenu {
-    margin: 10px auto auto 86%;
+    margin: 10px auto auto 88%;
     font-size: 30px;
     cursor: pointer;
     transition: 0.3s ease;
@@ -237,7 +237,7 @@ footer {
 .overlay .closebtn {
     position: absolute;
     top: 20px;
-    right: 45px;
+    right: 40px;
     font-size: 60px;
 }
 
